@@ -19,4 +19,9 @@ public class PersonRepository {
         query.setParameter("city", city);
         return query.getResultList();
     }
+
+    public List<Person> getPersonsAll() {
+        TypedQuery<Person> query = entityManager.createQuery("SELECT p FROM Person p", Person.class);
+        return query.getResultList();
+    }
 }
